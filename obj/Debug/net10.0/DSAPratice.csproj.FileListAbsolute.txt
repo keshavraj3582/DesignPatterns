@@ -1,0 +1,14 @@
+/Users/keshavrajchoudhary/DSAPratice/bin/Debug/net10.0/DSAPratice
+/Users/keshavrajchoudhary/DSAPratice/bin/Debug/net10.0/DSAPratice.deps.json
+/Users/keshavrajchoudhary/DSAPratice/bin/Debug/net10.0/DSAPratice.runtimeconfig.json
+/Users/keshavrajchoudhary/DSAPratice/bin/Debug/net10.0/DSAPratice.dll
+/Users/keshavrajchoudhary/DSAPratice/bin/Debug/net10.0/DSAPratice.pdb
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.AssemblyInfoInputs.cache
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.AssemblyInfo.cs
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.csproj.CoreCompileInputs.cache
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.dll
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/refint/DSAPratice.dll
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.pdb
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.genruntimeconfig.cache
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/ref/DSAPratice.dll
