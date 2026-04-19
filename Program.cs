@@ -1,116 +1,102 @@
 ﻿using System;
-public interface ITalkable
+public interface IThali
 {
-    void Talk();
+    public void PrePare();
 }
-public interface IWalkable
+public class BasicThali:IThali
 {
-    void Walk();
-}
-
-public interface IFlyable
-{
-    void Fly();
-}
-public class FlyWithJet:IFlyable
-{
-    public void Fly()
+    public void PrePare()
     {
-        System.Console.WriteLine("I Can Fly With Jet");
+        Console.WriteLine("Deliver Basic Thali");
     }
 }
-public class NormalFlyable:IFlyable
+public class StandardThali:IThali
 {
-    public void Fly()
+    public void PrePare()
     {
-        System.Console.WriteLine("I Can Fly Normally");
+        Console.WriteLine("Deliver Standarad Thali");
     }
 }
-
-public class NonFlayable : IFlyable
+public class DeluxThali:IThali
 {
-    public void Fly()
+    public void PrePare()
     {
-        System.Console.WriteLine("I Can't Fly Normally");
+        Console.WriteLine("Deliver Delux Thali");
     }
 }
-public class NormalWalk:IWalkable
+//
+public class WheatThaliBasic:IThali
 {
-    public void Walk()
+    public void PrePare()
     {
-        System.Console.WriteLine("I Can Walk Normally");
+        Console.WriteLine("Deliver Basic Thali");
     }
 }
-
-public class NonWalkable : IWalkable
+public class WheatThaliStandard:IThali
 {
-    public void Walk()
+    public void PrePare()
     {
-        System.Console.WriteLine("I Can't Walk Normally");
+        Console.WriteLine("Deliver Standarad Thali");
+    }
+}
+public class WheatThaliDelux:IThali
+{
+    public void PrePare()
+    {
+        Console.WriteLine("Deliver Delux Thali");
     }
 }
 
-
-public class NormalTalk:ITalkable
+//
+public class Thali
 {
-    public void Talk()
+    IThali DeliverThali;
+    public Thali(IThali thali)
     {
-        Console.WriteLine("I am Talking Normally");
+        DeliverThali=thali;
+    }
+    public void Delivery()
+    {
+        DeliverThali.PrePare();
     }
 }
-public class NoTalk:ITalkable
+public interface IThaliFactory
 {
-    public void Talk()
+    IThali CreateThali(int choice);
+}
+public class BasicThaliFactory():IThaliFactory
+{
+    public IThali CreateThali(int choice)
     {
-        Console.WriteLine("I Can't Talk");
+        return choice switch
+        {
+            1=>new BasicThali(),
+            2=>new StandardThali(),
+            3=>new DeluxThali(),
+            _=>throw new InvalidDataException("Unsupported Choice")
+        };
     }
 }
-public abstract class Robot
+public class WheatThaliFactory():IThaliFactory
 {
-
-    ITalkable Talkable;
-    IWalkable Walkable;
-    IFlyable Flyable;
-
-    public Robot(ITalkable talkable,IWalkable walkable,IFlyable flyable)
+    public IThali CreateThali(int choice)
     {
-        Talkable=talkable;
-        Walkable=walkable;
-        Flyable=flyable;
-    }
-    public void SetTalk(ITalkable talkable)
-    {
-        talkable.Talk();
-    }
-    public void SetWalk(IWalkable walkable)
-    {
-        walkable.Walk();
-    }
-    public void SetFly(IFlyable flyable)
-    {
-        flyable.Fly();
-    }
-    public abstract void Projection();
-}
-
-public class CompanionRobot:Robot
-{
-    public CompanionRobot():base(new NormalTalk(),new NormalWalk(),new NonFlayable())
-    {
+        return choice switch
+        {
+            1=>new WheatThaliBasic(),
+            2=>new WheatThaliStandard(),
+            3=>new WheatThaliDelux(),
+            _=> throw new InvalidDataException("Unsupported Choice")
+        };
         
     }
-    public override void Projection()
-    {
-        System.Console.WriteLine(" I am a Companion Robot");
-    }
+}
 
-    public static void Main()
+public class Client
+{
+    static void Main()  
     {
-        CompanionRobot companionRobot=new CompanionRobot();
-        companionRobot.Projection();
-
-        companionRobot.SetWalk(new NormalWalk());
-        companionRobot.SetTalk(new NormalTalk());
-        companionRobot.SetFly(new FlyWithJet());
+        IThali thali= new WheatThaliFactory().CreateThali(3);
+        thali.PrePare();
     }
 }

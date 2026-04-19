@@ -12,3 +12,4 @@
 /Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.pdb
 /Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.genruntimeconfig.cache
 /Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/ref/DSAPratice.dll
+/Users/keshavrajchoudhary/DSAPratice/obj/Debug/net10.0/DSAPratice.sourcelink.json
